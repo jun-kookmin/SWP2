@@ -43,7 +43,7 @@ def doScoreDB(scdb):
                 scdb += [record]
                 parse[2] = parse[2]
                 parse[3] = parse[3]
-                #int선언
+               
                 ab = int(parse[2])
                 
                 
