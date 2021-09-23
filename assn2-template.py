@@ -15,7 +15,7 @@ def recbinsearch(L, s_idx, e_idx, target):
 
     if s_idx > e_idx:
         return -1
-    #같
+    #같은 경우
     if L[mid_idx] == target:
         return mid_idx
     #mid_idx가 target보다 큰 경우
