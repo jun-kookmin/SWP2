@@ -1,11 +1,11 @@
 import time
 import random
-
+#재귀
 def fibo(n):
     if n <= 1:
         return n
     return fibo(n - 1) + fibo(n - 2)
-
+#반복
 def iterfibo(nbr):
     a,b = 1,1
     if nbr==1 or nbr==2:
