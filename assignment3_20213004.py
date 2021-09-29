@@ -12,6 +12,9 @@ def readScoreDB():
     scdb = []
     try:
         scdb =  pickle.load(fH)
+         for q in scdb:
+            q['Age'] = int(q['Age'])
+            q['Score'] = int(q['Score'])
     except:
         print("Empty DB: ", dbfilename)
     else:
@@ -43,30 +46,33 @@ def doScoreDB(scdb):
                 scdb += [record]
                 parse[2] = parse[2]
                 parse[3] = parse[3]
-               
-                ab = int(parse[2])
+                #int선언
+                int_Age = int(parse[2])
+                int_Score = int(parse[3])
                 
                 
             #del   
             elif parse[0] == 'del':
-                for p in scdb:
-                    if p['Name'] == parse[1]:
-                        scdb.remove(p) and reversed(scdb)
-                        print("입력하신 값을 삭제하였습니다")
+                for i in range(len(scdb)):
+                    while True:
+                        for p in scdb:
+                            if p['Name'] == parse[1]:
+                                scdb.remove(p)
+                                print("입력하신 값을 삭제하였습니다")
+                        break
                         
                         
             # 3개 값 입력 inc 이름 amount
             
             elif parse[0] == 'inc':
                 parse[2] = parse[2]
-                        
-                #int선언
+
                 abc = int(parse[2])
                             
                 for p in scdb:
                     if p['Name'] == parse[1]:
                         
-                        p['Score'] = ab + abc
+                        p['Score'] = int_Score + inc_Score
                         
                         print("Score에 입력하신 값을 더하였습니다.")
                     
